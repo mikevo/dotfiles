@@ -1,6 +1,7 @@
 set mouse=a
 set number
 set relativenumber
+set cursorline
 
 syntax enable
 colorscheme gruvbox
