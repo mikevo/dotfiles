@@ -22,6 +22,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
 
+" Utility
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'ervandew/supertab'
 
 " Initialize plugin system
 call plug#end()
