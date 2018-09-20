@@ -35,6 +35,8 @@ let NERDTreeShowHidden = 1
 
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 
+set colorcolumn=80
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
