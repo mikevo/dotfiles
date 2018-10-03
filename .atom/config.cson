@@ -50,7 +50,7 @@
       "/texput.aux"
     ]
   "linter-ui-default":
-    panelHeight: 130
+    panelHeight: 141
   minimap:
     plugins:
       linter: true
