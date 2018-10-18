@@ -7,6 +7,7 @@
       "spell-check"
       "autocomplete-clang"
     ]
+    excludeVcsIgnoredPaths: false
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
