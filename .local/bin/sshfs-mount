@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mkdir -p ~/.sshfs-mnt/home/mike/
+mkdir -p ~/.sshfs-mnt/family/
+mkdir -p ~/.sshfs-mnt/pub/
+
+sshfs mike@nas2.inn1.famv.net:/mnt/net/home/mike/ ~/.sshfs-mnt/home/mike/
+sshfs mike@nas2.inn1.famv.net:/mnt/net/family/ ~/.sshfs-mnt/family/
+sshfs mike@nas2.inn1.famv.net:/mnt/net/pub/ ~/.sshfs-mnt/pub/
+
