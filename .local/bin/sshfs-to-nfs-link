@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Michael Voetter <mike@famv.net>
+#
+
+cd "$HOME"
+
+if [[ ( -d "$HOME/nethome" ) || ( -f "$HOME/nethome" ) ]]; then
+    unlink nethome
+fi
+
+if [[ ( -d "$HOME/family" ) || ( -f "$HOME/family" ) ]]; then 
+    unlink family
+fi
+
+if [[ ( -d "$HOME/pub" ) || ( -f "$HOME/pub" ) ]]; then
+    unlink pub
+fi
+
+/usr/local/bin/nfs-link -p
