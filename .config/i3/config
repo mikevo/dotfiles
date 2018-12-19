@@ -203,3 +203,7 @@ bar {
 
 # set language and keybard layout
 exec "setxkbmap -layout us -variant euro"
+
+
+# set wallpaper
+exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
