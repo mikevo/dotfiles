@@ -207,3 +207,5 @@ exec "setxkbmap -layout us -variant euro"
 
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
+
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
