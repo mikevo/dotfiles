@@ -39,7 +39,7 @@ battery_level {
 
 clock {
   format = '{Europe/Vienna}'
-  format_time = '{icon}  %H:%M  %Y-%m-%d'
+  format_time = '{icon}  %H:%M  %Y-%m-%d  '
   blocks = '󰀯󰀻󰀤󰀰󰀥󰀱󰀦󰀲󰀧󰀳󰀨󰀴󰀩󰀵󰀪󰀶󰀫󰀷󰀬󰀸󰀭󰀹󰀮󰀺'
 }
 
