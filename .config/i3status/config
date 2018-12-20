@@ -8,6 +8,7 @@ general {
   interval = 1
 }
 
+order += 'disk /'
 order += 'sysdata'
 order += 'xrandr'
 order += 'net_rate'
@@ -38,7 +39,7 @@ battery_level {
 
 clock {
   format = '{Europe/Vienna}'
-  format_time = '{icon}   %H:%M   '
+  format_time = '{icon}  %H:%M  %Y-%m-%d'
   blocks = '󰀯󰀻󰀤󰀰󰀥󰀱󰀦󰀲󰀧󰀳󰀨󰀴󰀩󰀵󰀪󰀶󰀫󰀷󰀬󰀸󰀭󰀹󰀮󰀺'
 }
 
@@ -64,7 +65,6 @@ group wifi {
   button_prev = 0
 
   wifi brief {
-    cache_timeout = -1
     signal_bad = 0
     bitrate_bad = 0
     bitrate_degraded = 0
@@ -72,11 +72,10 @@ group wifi {
   }
 
   wifi detailed {
-    cache_timeout = -1
     signal_bad = 0
     bitrate_bad = 0
     bitrate_degraded = 0
-    format = '{ssid}  ({signal_percent})|󰀆'
+    format = '{ssid}  ({signal_percent}) 󰀆|󰀆'
   }
 }
 
