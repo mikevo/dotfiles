@@ -12,8 +12,6 @@ packages: [
   "editorconfig"
   "file-icons"
   "git-log"
-  "go-debug"
-  "go-plus"
   "ide-cpp"
   "ide-css"
   "ide-html"

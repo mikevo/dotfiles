@@ -11,7 +11,7 @@
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "monokai"
+      "gruvbox-plus-syntax"
     ]
   editor:
     scrollPastEnd: true
@@ -20,6 +20,8 @@
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "99f654d7-ca96-4445-8ff5-7f32a5219e48"
+  "gruvbox-plus-syntax":
+    contrast: "Soft"
   latex:
     cleanPatterns: [
       "**/*.aux"
