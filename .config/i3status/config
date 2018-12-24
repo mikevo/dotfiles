@@ -10,7 +10,6 @@ general {
 
 order += 'disk /'
 order += 'sysdata'
-order += 'xrandr'
 order += 'net_rate'
 order += 'group wifi'
 order += 'backlight'
@@ -78,9 +77,3 @@ group wifi {
     format = '{ssid}  ({signal_percent}) 󰀆|󰀆'
   }
 }
-
-xrandr {
-  fixed_width = false
-  hide_if_single_combination = true
-}
-
