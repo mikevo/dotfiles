@@ -229,3 +229,5 @@ exec --no-startup-id conky -c ~/.config/conky/conkyrc
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 exec /usr/libexec/goa-daemon --replace
+
+exec --no-startup-id kwalletd5
