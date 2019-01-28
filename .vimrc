@@ -74,6 +74,9 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 
+let g:ale_python_auto_pipenv = 1
+
+
 Plug 'lervag/vimtex'
 
 " Initialize plugin system
