@@ -11,8 +11,6 @@ fi
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # User specific aliases and functions
-alias ll="ls -lh"
-alias lll="ll --group-directories-first"
-alias gpg1="/usr/bin/gpg"
-alias gpg="gpg2"
-alias prp="pipenv run python"
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi

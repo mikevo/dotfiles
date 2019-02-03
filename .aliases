@@ -1,0 +1,5 @@
+alias ll="ls -lh"
+alias lll="ll --group-directories-first"
+alias gpg1="/usr/bin/gpg"
+alias gpg="gpg2"
+alias prp="pipenv run python"
