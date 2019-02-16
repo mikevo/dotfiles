@@ -5,16 +5,16 @@
 
 cd "$HOME"
 
-if [[ ( -d "$HOME/nethome" ) || ( -f "$HOME/nethome" ) ]]; then
-    unlink nethome
+if [ -L "$HOME/nethome" ]; then
+    unlink "$HOME/nethome"
 fi
 
-if [[ ( -d "$HOME/family" ) || ( -f "$HOME/family" ) ]]; then 
-    unlink family
+if [ -L "$HOME/family" ]; then 
+    unlink "$HOME/family"
 fi
 
-if [[ ( -d "$HOME/pub" ) || ( -f "$HOME/pub" ) ]]; then
-    unlink pub
+if [ -L "$HOME/pub" ]; then
+    unlink "$HOME/pub"
 fi
 
 /usr/local/bin/nfs-link -p

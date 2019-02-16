@@ -5,17 +5,17 @@
 
 cd "$HOME"
 
-if [[ ( -d "$HOME/nethome" ) || ( -f "$HOME/nethome" ) ]]; then
-    unlink nethome
+if [ -L "$HOME/nethome" ]; then
+    unlink "$HOME/nethome"
 	ln -s "$HOME/.sshfs-mnt/home/$USER/home" nethome
 fi
 
-if [[ ( -d "$HOME/family" ) || ( -f "$HOME/family" ) ]]; then 
-    unlink family
+if [ -L "$HOME/family" ]; then
+    unlink "$HOME/family"
 	ln -s "$HOME/.sshfs-mnt/family" family
 fi
 
-if [[ ( -d "$HOME/pub" ) || ( -f "$HOME/pub" ) ]]; then
-    unlink pub
+if [ -L "$HOME/pub" ]; then
+    unlink "$HOME/pub"
 	ln -s "$HOME/.sshfs-mnt/pub" pub
 fi
