@@ -42,6 +42,10 @@ client.unfocused          $color_normal_gray     $color_normal_gray     $color_n
 client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
 client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
 
+
+default_border pixel 4
+hide_edge_borders smart
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
