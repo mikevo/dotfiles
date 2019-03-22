@@ -234,6 +234,7 @@ exec --no-startup-id feh --bg-scale ~/pics/wallpaper.jpg
 exec --no-startup-id conky -c ~/.config/conky/conkyrc
 
 
+exec --no-startup-id /usr/libexec/goa-daemon --replace
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 # autostart .desktop files on the system
