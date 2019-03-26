@@ -79,6 +79,8 @@ Plug 'lervag/vimtex'
 " Initialize plugin system
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
+if v:version > 800 || has('nvim')
+    let g:deoplete#enable_at_startup = 1
+endif
 let g:ale_python_auto_pipenv = 1
 let g:indentLine_setConceal = 0
