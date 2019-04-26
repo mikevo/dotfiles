@@ -85,3 +85,12 @@ if v:version > 800 || has('nvim')
     let g:deoplete#enable_at_startup = 1
 endif
 let g:ale_python_auto_pipenv = 1
+
+
+" Automatic spell checking
+set spelllang=en_us
+autocmd BufNewFile,BufRead,BufEnter   *.md      setlocal spell
+autocmd BufNewFile,BufRead,BufEnter   *.tex     setlocal spell
+autocmd BufNewFile,BufRead,BufEnter   *.txt     setlocal spell
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
