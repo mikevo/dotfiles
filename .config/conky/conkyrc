@@ -32,7 +32,7 @@ conky.text = [[
 
 ${goto 18}${font Ubuntu:pixelsize=12}${color FFA300}System${color}${goto 60}$conky_build_arch
 ${goto 18}${font Ubuntu:pixelsize=12}${color FFA300}Hostname${color}${goto 75}$nodename
-${color EAEAEA}${font Ubuntu:pixelsize=100}${time %H:%M}${font}${voffset -84}${offset 10}${color FFA300}${font Ubuntu:pixelsize=42}${time %d} ${voffset -20} ${color EAEAEA}${font Ubuntu:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font Ubuntu:pixelsize=58}${offset -200}${time %A}${font}
+${color EAEAEA}${font Ubuntu:pixelsize=100}${time %H:%M}${font}${voffset -84}${offset 55}${color FFA300}${font Ubuntu:pixelsize=42}${time %d} ${voffset -20} ${color EAEAEA}${font Ubuntu:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font Ubuntu:pixelsize=58}${offset -200}${time %A}${font}
 ${voffset 5}
 ${goto 45}${font Ubuntu:pixelsize=9}${color FFA300}Free${goto 120}Size
 ${goto 20}${font Ubuntu:pixelsize=11}${color FFA300}HD${goto 45}$color${fs_free /}${goto 75}  /  ${goto 120}${fs_size /}${goto 170}${color FFA300}CPU Load${goto 280}$color${cpu cpu0}%
