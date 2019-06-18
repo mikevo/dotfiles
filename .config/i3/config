@@ -239,3 +239,5 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 # autostart .desktop files on the system
 exec --no-startup-id dex-autostart -ae i3
+
+exec --no-startup-id xmodmap ~/.xmodmap
