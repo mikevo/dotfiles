@@ -229,6 +229,9 @@ bindsym Mod1+F1 exec --no-startup-id "setxkbmap -layout us -variant euro"
 bindsym Mod1+F2 exec --no-startup-id "setxkbmap -layout us -variant intl"
 
 
+# add key locking
+bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
+
 # set wallpaper
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id conky -c ~/.config/conky/conkyrc
@@ -237,7 +240,8 @@ exec --no-startup-id conky -c ~/.config/conky/conkyrc
 exec --no-startup-id /usr/libexec/goa-daemon --replace
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
+
 # autostart .desktop files on the system
 exec --no-startup-id dex-autostart -ae i3
 
-exec --no-startup-id xmodmap ~/.xmodmap
+exec_always --no-startup-id sleep 1 && xmodmap ~/.xmodmap
