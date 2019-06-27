@@ -20,7 +20,7 @@ backlight {
   cache_timeout = -1
   brightness_delta = 10
   low_tune_threshold = 10
-  command = 'light'
+  command = 'xbacklight'
   format = '\?color=good 󰀅  {level}%'
   on_udev_backlight = 'refresh_and_freeze'
 }
