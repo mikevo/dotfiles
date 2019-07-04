@@ -26,23 +26,6 @@ font pango: Taskbar, Cantarell 9
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Color scheme (Gruvbox dark)
-set $color_normal_white  #a89984
-set $color_bright_white  #ebdbb2
-set $color_normal_gray   #222222
-set $color_bright_gray   #3c3836
-set $color_bright_yellow #d79921
-set $color_normal_black  #282828
-set $color_unused        #ff0000
-
-# Colors                  border                 background             text                   indicator       child_border
-client.focused            $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_white
-client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
-client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
-client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
-client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
-
-
 default_border pixel 4
 hide_edge_borders smart
 
@@ -219,15 +202,9 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bar {
   colors {
     # Whole color settings
-    background $color_normal_gray
-    separator  $color_bright_gray
-    statusline $color_bright_white
-
-    # Type             border                 background              font
-    focused_workspace  $color_bright_gray     $color_bright_gray      $color_bright_white
-    active_workspace   $color_unused          $color_unused           $color_unused
-    inactive_workspace $color_normal_gray     $color_normal_gray      $color_normal_white
-    urgent_workspace   $color_bright_yellow   $color_bright_yellow    $color_normal_black
+    statusline #ffffff
+    background #323232
+    inactive_workspace #323232 #323232 #5c5c5c    
   }
 
   separator_symbol "  |  "
