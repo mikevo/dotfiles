@@ -157,8 +157,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move workspace
-bindsym $mod+less move workspace to output left
-bindsym $mod+more move workspace to output right
+bindsym $mod+comma move workspace to output left
+bindsym $mod+period move workspace to output right
 
 # Assign Workspaces
 assign [class="Evolution"] $ws3
