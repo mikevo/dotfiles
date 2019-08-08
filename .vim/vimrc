@@ -29,6 +29,11 @@ set cursorline
 " show the matching part of the pair for [] {} and ()
 set showmatch
 
+" read changes from disk
+set autoread
+" reload when entering the buffer or gaining focus
+au FocusGained,BufEnter * :silent! !
+
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
 
