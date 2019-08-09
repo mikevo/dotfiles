@@ -222,9 +222,8 @@ bar {
 
 # set language and keybard layout
 exec --no-startup-id "setxkbmap -layout us -variant euro"
-bindsym Mod1+F1 exec --no-startup-id "setxkbmap -layout us -variant euro"
-bindsym Mod1+F2 exec --no-startup-id "setxkbmap -layout us -variant intl"
-
+bindsym Mod1+F1 exec --no-startup-id "setxkbmap -layout us -variant euro; xmodmap ~/.xmodmap"
+bindsym Mod1+F2 exec --no-startup-id "setxkbmap -layout us -variant intl; xmodmap ~/.xmodmap"
 
 # add key locking
 bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
@@ -241,4 +240,4 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 # autostart .desktop files on the system
 exec --no-startup-id dex-autostart -ae i3
 
-exec_always --no-startup-id sleep 1 ; xmodmap ~/.xmodmap
+exec_always --no-startup-id sleep 2; xmodmap ~/.xmodmap
