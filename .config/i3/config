@@ -157,6 +157,8 @@ assign [class="Firefox"] $ws5
 assign [class="Chromium"] $ws5
 assign [class="Google"] $ws5
 
+assign [class="DBeaver"] $ws7
+
 for_window [class="Spotify"] move to workspace $ws12
 
 # reload the configuration file
