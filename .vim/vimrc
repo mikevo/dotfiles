@@ -81,6 +81,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'elzr/vim-json'
 Plug 'lervag/vimtex'
 
 " Initialize plugin system
@@ -91,6 +92,7 @@ if v:version > 800 || has('nvim')
 endif
 let g:ale_python_auto_pipenv = 1
 let g:tex_conceal = 0
+let g:vim_json_syntax_conceal = 0
 
 
 " Automatic spell checking
