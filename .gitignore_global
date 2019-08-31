@@ -33,6 +33,7 @@ nbproject/
 *.anjuta*
 autom4te.cache
 .vscode/
+.dbeaver/
 
 # latex #
 #########
