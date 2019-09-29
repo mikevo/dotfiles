@@ -32,7 +32,7 @@ battery_level {
   color_charging = '#fabd2f'
   format = '{icon}   {percent}%'
   notify_low_level = true
-  measurement_mode = 'sys'
+  measurement_mode = 'acpi'
   on_udev_power_supply = 'refresh'
 }
 
