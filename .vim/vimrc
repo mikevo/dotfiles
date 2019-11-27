@@ -126,3 +126,5 @@ autocmd BufNewFile,BufRead,BufEnter   *.tex     setlocal spell
 autocmd BufNewFile,BufRead,BufEnter   *.txt     setlocal spell
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
+
+let g:airline_theme='powerlineish'
