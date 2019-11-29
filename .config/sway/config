@@ -197,8 +197,8 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 #
 # apperance
 #
-default_border pixel 8
-gaps inner 8
+default_border pixel 4
+gaps inner 4
 smart_gaps on
 
 #
