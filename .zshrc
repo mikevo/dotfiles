@@ -23,6 +23,6 @@ fi
 source $HOME/.aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-if autoload -Uz is-at-least || is-at-least 5.1; then
+if autoload -Uz is-at-least && is-at-least 5.1; then
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
