@@ -169,8 +169,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+v splith
+    bindsym $mod+Shift+S splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -265,4 +265,5 @@ bar {
 # add key locking
 bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
 
+include ~/.config/sway/config.d/*
 include /etc/sway/config.d/*
