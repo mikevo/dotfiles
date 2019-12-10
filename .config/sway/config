@@ -19,6 +19,8 @@ set $term xfce4-terminal
 #set $menu dmenu_run
 set $menu rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -theme Arc-Dark
 
+font pango: Taskbar, Cantarell 9
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -103,30 +105,64 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 #
 # Workspaces:
 #
+    # Define names for default workspaces for which we configure key bindings later on.
+    # We use variables to avoid repeating the names in multiple places.
+    set $ws1 "1: work"
+    set $ws2 "2: work"
+    set $ws3 "3: comm"
+    set $ws4 "4: work"
+    set $ws5 "5: web"
+    set $ws6 "6: work"
+    set $ws7 "7: work"
+    set $ws8 "8: work"
+    set $ws9 "9: work"
+    set $ws10 "10: work"
+    set $ws11 "11: work"
+    set $ws12 "12: music"
+
     # switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws10
+    bindsym $mod+minus workspace $ws11
+    bindsym $mod+equal workspace $ws12
+
     # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10
+    bindsym $mod+Shift+minus move container to workspace $ws11
+    bindsym $mod+Shift+equal move container to workspace $ws12
+
+    # move workspace
+    bindsym $mod+Shift+less move workspace to output left
+    bindsym $mod+Shift+greater move workspace to output right
+
+    # Assign Workspaces
+    assign [class="Evolution"] $ws3
+    assign [class="Slack"] $ws3
+
+    assign [class="Firefox"] $ws5
+    assign [class="Chromium"] $ws5
+    assign [class="Google"] $ws5
+
+    assign [class="DBeaver"] $ws7
+
+    for_window [class="Spotify"] move to workspace $ws12
 #
 # Layout stuff:
 #
@@ -159,11 +195,11 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+Shift+bracketright move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+bracketright scratchpad show
 #
 # Resizing containers:
 #
@@ -212,14 +248,21 @@ smart_gaps on
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-    tray_output all
-    
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+  colors {
+    # Whole color settings
+    statusline #ffffff
+    background #323232
+    inactive_workspace #323232 #323232 #5c5c5c    
+  }
+
+  separator_symbol "  |  "
+  status_command py3status
+
+  position top
+  tray_output primary
 }
+
+# add key locking
+bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
 
 include /etc/sway/config.d/*
