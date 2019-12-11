@@ -149,8 +149,8 @@ input * {
     bindsym $mod+Shift+equal move container to workspace $ws12
 
     # move workspace
-    bindsym $mod+Shift+less move workspace to output left
-    bindsym $mod+Shift+greater move workspace to output right
+    bindsym $mod+less move workspace to output left
+    bindsym $mod+greater move workspace to output right
 
     # Assign Workspaces
     assign [class="Evolution"] $ws3
