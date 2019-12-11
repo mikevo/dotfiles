@@ -26,13 +26,14 @@ backlight {
 }
 
 battery_level {
+  battery_id = 'all'
   cache_timeout = 60
   blocks = '󰀙󰀘󰀗󰀖󰀕'
   charging_character = '󰀔'
   color_charging = '#fabd2f'
   format = '{icon}   {percent}%'
   notify_low_level = true
-  measurement_mode = 'acpi'
+  measurement_mode = 'sys'
   on_udev_power_supply = 'refresh'
 }
 
