@@ -267,5 +267,11 @@ bar {
 # add key locking
 bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
 
+exec --no-startup-id /usr/libexec/goa-daemon --replace
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+
+# autostart .desktop files on the system
+exec --no-startup-id dex-autostart -ae sway
+
 include ~/.config/sway/config.d/*
 include /etc/sway/config.d/*
