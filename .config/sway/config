@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term xfce4-terminal
+set $term kitty
 # Your preferred application launcher
 #set $menu dmenu_run
 set $menu rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -theme Arc-Dark
