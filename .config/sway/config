@@ -24,7 +24,7 @@ font pango: Taskbar, Cantarell 9
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/f31/extras/grand-park.jpg fill
+output * bg /usr/share/backgrounds/f31/extras/green-leaf.png fill
 #
 # Example configuration:
 #
