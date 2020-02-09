@@ -4,6 +4,6 @@
 [submodule ".pyenv"]
 	path = .pyenv
 	url = https://github.com/pyenv/pyenv.git
-[submodule "/home/mike/.linuxbrew/Homebrew"]
-	path = /home/mike/.linuxbrew/Homebrew
+[submodule ".linuxbrew/Homebrew"]
+	path = .linuxbrew/Homebrew
 	url = https://github.com/Homebrew/brew
