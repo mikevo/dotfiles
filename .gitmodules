@@ -7,3 +7,6 @@
 [submodule ".linuxbrew/Homebrew"]
 	path = .linuxbrew/Homebrew
 	url = https://github.com/Homebrew/brew
+[submodule "/home/mike/.bash_it"]
+	path = /home/mike/.bash_it
+	url = https://github.com/Bash-it/bash-it.git
