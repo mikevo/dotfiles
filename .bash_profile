@@ -26,3 +26,5 @@ fi
 if [ -f ~/.linuxbrew/bin/brew ]; then
     eval $(~/.linuxbrew/bin/brew shellenv)
 fi
+
+export PATH="$HOME/.poetry/bin:$PATH"
