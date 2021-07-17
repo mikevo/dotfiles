@@ -232,7 +232,8 @@ bar {
 bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
 
 # set wallpaper
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
+exec --no-startup-id ~/.fehbg
 
 
 exec --no-startup-id /usr/libexec/goa-daemon --replace

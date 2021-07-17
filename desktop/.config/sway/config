@@ -24,7 +24,8 @@ font pango: Taskbar, Cantarell 9
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/f31/extras/green-leaf.png fill
+#output * bg /usr/share/backgrounds/f31/extras/green-leaf.png fill
+exec ~/.azotebg
 #
 # Example configuration:
 #
