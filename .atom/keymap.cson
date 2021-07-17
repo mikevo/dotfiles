@@ -1,5 +1,0 @@
-'atom-text-editor':
-  'ctrl-shift-b': 'atom-beautify:beautify-editor'
-
-'atom-text-editor.vim-mode-plus':
-  'ctrl-c': 'core:copy'
