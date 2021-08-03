@@ -216,9 +216,15 @@ bindsym XF86AudioPrev exec playerctl previous
 bar {
   colors {
     # Whole color settings
-    statusline #ffffff
     background #323232
+    statusline #ffffff
+    separator #666666
+
+    focused_workspace  #4c7899 #e95420 #ffffff
+    active_workspace   #333333 #e95420 #ffffff
     inactive_workspace #323232 #323232 #5c5c5c    
+    urgent_workspace   #2f343a #762572 #ffffff
+    binding_mode       #2f343a #762572 #ffffff
   }
 
   separator_symbol "  |  "
@@ -227,6 +233,14 @@ bar {
   position top
   tray_output primary
 }
+
+client.focused          #e95420 #e95420 #ffffff #2e9ef4   #e95420
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # add key locking
 bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
