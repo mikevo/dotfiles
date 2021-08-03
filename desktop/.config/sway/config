@@ -18,6 +18,8 @@ set $term xfce4-terminal
 # Your preferred application launcher
 #set $menu dmenu_run
 set $menu rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -theme Arc-Dark
+#set $menu wofi --show drun
+set $lock swaylock -f -c 101010
 
 font pango: Taskbar, Cantarell 9
 
@@ -254,9 +256,16 @@ smart_gaps on
 bar {
   colors {
     # Whole color settings
-    statusline #ffffff
     background #323232
-    inactive_workspace #323232 #323232 #5c5c5c    
+    statusline #ffffff
+    separator #666666
+
+  # <colorclass> <border> <background> <text>
+    focused_workspace  #e95420 #e95420 #ffffff
+    active_workspace   #e95420 #e95420 #ffffff
+    inactive_workspace #323232 #323232 #ffffff
+    urgent_workspace   #762572 #762572 #ffffff
+    binding_mode       #762572 #762572 #ffffff
   }
 
   separator_symbol "  |  "
@@ -265,8 +274,17 @@ bar {
   position top
 }
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #e95420 #e95420 #ffffff #e95420   #e95420
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #762572 #762572 #ffffff #762572   #762572
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
 # add key locking
-bindsym Mod1+F12 exec --no-startup-id "i3lock -c 101010"
+bindsym Mod1+F12 exec $lock
 
 exec --no-startup-id /usr/libexec/goa-daemon --replace
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
