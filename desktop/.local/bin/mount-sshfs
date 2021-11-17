@@ -1,10 +1,10 @@
 #!/bin/sh
 
-mkdir -p $HOME/.sshfs-mnt/home/mike/
+mkdir -p $HOME/.sshfs-mnt/home/michael/
 mkdir -p $HOME/.sshfs-mnt/family/
 mkdir -p $HOME/.sshfs-mnt/pub/
 
-sshfs mike@nas2.inn1.famv.net:/mnt/net/home/mike/ $HOME/.sshfs-mnt/home/mike/
-sshfs mike@nas2.inn1.famv.net:/mnt/net/family/ $HOME/.sshfs-mnt/family/
-sshfs mike@nas2.inn1.famv.net:/mnt/net/pub/ $HOME/.sshfs-mnt/pub/
+sshfs michael@nas002.sjo-va.famv.net:/mnt/net/home/michael/ $HOME/.sshfs-mnt/home/michael/
+sshfs michael@nas002.sjo-va.famv.net:/mnt/net/family/ $HOME/.sshfs-mnt/family/
+sshfs michael@nas002.sjo-va.famv.net:/mnt/net/pub/ $HOME/.sshfs-mnt/pub/
 
