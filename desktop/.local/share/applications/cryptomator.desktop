@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Cryptomator
+Exec=sh -e -c "exec ${HOME}/.local/bin/cryptomator.AppImage"
+Icon=Cryptomator
+Type=Application
+Categories=GTK;GNOME;Utility;
