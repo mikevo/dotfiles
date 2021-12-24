@@ -7,3 +7,6 @@ alias pjupyter="pipenv run jupyter"
 alias pmake="pipenv run make"
 alias ppython="pipenv run python"
 alias prun="pipenv run"
+if [ "$TERM" = "xterm-kitty" ]; then
+    alias ssh="kitty +kitten ssh"
+fi
