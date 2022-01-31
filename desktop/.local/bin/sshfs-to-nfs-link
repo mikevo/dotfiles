@@ -17,4 +17,4 @@ if [ -L "$HOME/pub" ]; then
     unlink "$HOME/pub"
 fi
 
-/usr/local/bin/nfs-link -p
+nfs-link -p

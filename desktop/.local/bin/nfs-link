@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# nfs link script
+#
+# This script adds links to mounted nfs shares in the home directory.
+#
+# Michael Voetter <mike@famv.net>
+#
+
+cd "$HOME"
+
+if [[ (! -d "$HOME/nethome") && (! -f "$HOME/nethome") ]]; then
+	ln -s "/mnt/net/home/$USER/home" nethome
+fi
+
+if [[ (! -d "$HOME/family") && (! -f "$HOME/family") ]]; then 
+	ln -s "/mnt/net/family" family
+fi
+
+if [ "$1" == "-p" ]; then
+	if [[ (! -d "$HOME/pub") && (! -f "$HOME/pub") ]]; then
+		ln -s "/mnt/net/pub" pub
+	fi
+fi
