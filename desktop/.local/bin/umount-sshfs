@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo umount ~/.sshfs-mnt/home/mike/
+sudo umount ~/.sshfs-mnt/home/michael/
 sudo umount ~/.sshfs-mnt/family/
 sudo umount ~/.sshfs-mnt/pub/
 
