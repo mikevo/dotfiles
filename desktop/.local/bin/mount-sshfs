@@ -4,7 +4,7 @@ mkdir -p $HOME/.sshfs-mnt/home/michael/
 mkdir -p $HOME/.sshfs-mnt/family/
 mkdir -p $HOME/.sshfs-mnt/pub/
 
-sshfs michael@nas002.sjo-va.famv.net:/mnt/net/home/mike/ $HOME/.sshfs-mnt/home/mike/
+sshfs michael@nas002.sjo-va.famv.net:/mnt/net/home/mike/ $HOME/.sshfs-mnt/home/micahel/
 sshfs michael@nas002.sjo-va.famv.net:/mnt/net/family/ $HOME/.sshfs-mnt/family/
 sshfs michael@nas002.sjo-va.famv.net:/mnt/net/pub/ $HOME/.sshfs-mnt/pub/
 
