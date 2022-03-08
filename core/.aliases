@@ -1,12 +1,16 @@
 alias ll="ls -lh"
 alias lll="ll --group-directories-first"
+
 alias gpg1="/usr/bin/gpg"
 alias gpg="gpg2"
+alias gcat="gpg --decrypt 2> /dev/null"
+
 alias prp="pipenv run python"
 alias pjupyter="pipenv run jupyter"
 alias pmake="pipenv run make"
 alias ppython="pipenv run python"
 alias prun="pipenv run"
+
 if [ "$TERM" = "xterm-kitty" ]; then
     alias ssh="kitty +kitten ssh"
 fi
