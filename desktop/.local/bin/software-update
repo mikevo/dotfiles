@@ -6,7 +6,7 @@ $ECHO "system software update"
 if [ -x "$(command -v dnf)" ]
 then
     sudo dnf upgrade
-elif [ -x "$(command -v apt)"]
+elif [ -x "$(command -v apt)" ]
 then
     sudo apt update
     sudo apt --yes upgrade
