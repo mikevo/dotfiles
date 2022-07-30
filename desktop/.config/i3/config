@@ -47,6 +47,7 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -theme Arc-Dark
+bindsym $mod+i exec --no-startup-id rofimoji
 
 # change focus
 bindsym $mod+j focus down
