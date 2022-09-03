@@ -4,7 +4,7 @@
 #
 # This script adds links to mounted nfs shares in the home directory.
 #
-# Michael Voetter <mike@famv.net>
+# Michael Voetter <mikevo@famv.net>
 #
 
 cd "$HOME"

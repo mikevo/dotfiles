@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Michael Voetter <mike@famv.net>
+# Michael Voetter <mikevo@famv.net>
 #
 
 cd "$HOME"
