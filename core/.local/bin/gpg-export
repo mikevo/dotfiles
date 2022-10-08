@@ -1,0 +1,43 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]
+then
+    echo "Usage:"
+    echo "$0 <key-name>"
+    exit 1
+fi
+
+TMP_FILE=$(mktemp)
+if [ $? -ne 0 ]; then
+    echo "$0: Can't create temp file."
+    exit 1
+fi
+
+gpg --armor --export $1 >> ${TMP_FILE}
+
+KEY_COUNT=$(gpg --show-key --with-colons ${TMP_FILE} | grep 'pub' | wc -l)
+if [ ${KEY_COUNT} -lt 1 ]; then
+    echo "$0: Can't find key '$1'."
+    exit 1
+fi
+
+if [ ${KEY_COUNT} -gt 1 ]; then
+    echo "$0: Key '$1' not unique."
+    exit 1
+fi
+
+KEY_FINGERPRINT=$(gpg --show-key --with-colons ${TMP_FILE} | sed -nr '/^fpr:/s/(fpr|\:+)//pg')
+KEY_FINGERPRINT=$(echo ${KEY_FINGERPRINT} | awk '{print $1}')
+
+KEY_FILE="./${KEY_FINGERPRINT}.pub.asc"
+
+echo "Store key: ${KEY_FILE}"
+if [ -f "${KEY_FILE}" ]
+then
+    echo "Overwrite existing file."
+    rm -f ${KEY_FILE}
+fi
+
+gpg --show-key --fingerprint ${TMP_FILE} > ${KEY_FILE}
+cat ${TMP_FILE} >> ${KEY_FILE}
+rm ${TMP_FILE}
