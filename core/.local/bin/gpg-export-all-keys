@@ -1,0 +1,8 @@
+#!/bin/sh
+
+key_ids=$(./gpg-list-public-keys-id)
+
+for key_id in ${key_ids};
+do
+    gpg-export ${key_id}
+done
