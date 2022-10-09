@@ -1,0 +1,2 @@
+#!/bin/sh
+gpg --list-public-keys --keyid-format long --with-colons | grep -e '^pub' | cut -d ':'  -f5
