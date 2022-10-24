@@ -1,6 +1,6 @@
 #!/bin/sh
 
-key_ids=$(./gpg-list-public-keys-id)
+key_ids=$(gpg-list-public-keys-id)
 
 for key_id in ${key_ids};
 do
