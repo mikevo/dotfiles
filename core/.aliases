@@ -11,6 +11,10 @@ alias pmake="pipenv run make"
 alias ppython="pipenv run python"
 alias prun="pipenv run"
 
+if [[ ! -x $(which kubectl) && -x $(which microk8s) ]]; then
+    alias kubectl="microk8s kubectl"
+fi
+
 if [ "$TERM" = "xterm-kitty" ]; then
     alias ssh="kitty +kitten ssh"
 fi
