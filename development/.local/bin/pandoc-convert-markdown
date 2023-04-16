@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ $# -ne 2 ]; then
+    echo "Usage: ${0} <path_to_markdown_file> <path_to_output_foler>"
+    echo "$#"
+    exit 1
+fi
+
+if [ -d "$XDG_DATA_HOME" ]; then
+    PANDOC_CSS_FILE="$XDG_DATA_HOME/pandoc.css"
+else
+    PANDOC_CSS_FILE="$HOME/.local/share/pandoc.css"
+fi
+
+PANDOC_OUTPUT_FILENAME=`basename "${1}" .md`
+
+pandoc --from markdown --to html5 --css "${PANDOC_CSS_FILE}" --self-contained "${1}" -o "${2}/${PANDOC_OUTPUT_FILENAME}.html"
+pandoc --from markdown --to pdf "${1}" -o "${2}/${PANDOC_OUTPUT_FILENAME}.pdf"
