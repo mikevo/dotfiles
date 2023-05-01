@@ -10,15 +10,15 @@
 cd "$HOME"
 
 if [[ (! -d "$HOME/nethome") && (! -f "$HOME/nethome") ]]; then
-	ln -s "/mnt/net/home/$USER/home" nethome
+	ln -s "/mnt/nfs/home/$USER/home" nethome
 fi
 
 if [[ (! -d "$HOME/family") && (! -f "$HOME/family") ]]; then 
-	ln -s "/mnt/net/family" family
+	ln -s "/mnt/nfs/family" family
 fi
 
 if [ "$1" == "-p" ]; then
 	if [[ (! -d "$HOME/pub") && (! -f "$HOME/pub") ]]; then
-		ln -s "/mnt/net/pub" pub
+		ln -s "/mnt/nfs/pub" pub
 	fi
 fi
