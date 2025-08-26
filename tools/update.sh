@@ -2,11 +2,13 @@
 
 DOTFILES="$HOME/.dotfiles"
 
-for dir in .config/nvim .gnupg .local/bin .vim; do
+STOW_DIRS=".config/nvim .gnupg .local/bin .vim"
+for dir in $STOW_DIRS; do
     if [ -h "$HOME/$dir" ]; then
         unlink "$HOME/$dir"
     fi
     mkdir -p "$HOME/$dir"
+    touch "$HOME/$dir/.stow-keep"
 done
 
 if [ -d "$DOTFILES" ]; then
@@ -18,3 +20,12 @@ if [ -d "$DOTFILES" ]; then
     stow --delete desktop
     stow --delete development
 fi
+
+STOW_DIRS=".config/nvim .gnupg .local/bin .vim"
+for dir in $STOW_DIRS; do
+    if [ -h "$HOME/$dir" ]; then
+        unlink "$HOME/$dir"
+    fi
+    mkdir -p "$HOME/$dir"
+    touch "$HOME/$dir/.stow-keep"
+done
