@@ -1,5 +1,4 @@
 #!/bin/sh
-DOTFILES="$HOME/.dotfiles"
 
 if [ -h "$HOME/tmp" ]; then
     unlink "$HOME/tmp"
@@ -13,24 +12,12 @@ if [ -d "$HOME/.bash_it" ]; then
     rm -rf "$HOME/.bash_it"
 fi
 
-if [ -d "$DOTFILES/.bash_it" ]; then
-    rm -rf "$DOTFILES/.bash_it"
-fi
-
 if [ -d "$HOME/.linuxbrew" ]; then
     rm -rf "$HOME/.linuxbrew"
 fi
 
-if [ -d "$DOTFILES/.linuxbrew" ]; then
-    rm -rf "$DOTFILES/.linuxbrew"
-fi
-
 if [ -d "$HOME/.zprezto" ]; then
     rm -rf "$HOME/.zprezto"
-fi
-
-if [ -d "$DOTFILES/.zprezto" ]; then
-    rm -rf "$DOTFILES/.zprezto"
 fi
 
 if [ -n "$SSH_CONNECTION" ]; then
@@ -42,12 +29,12 @@ if [ -n "$SSH_CONNECTION" ]; then
 
     find "$HOME/.config" -type d -empty -delete
 
-    if [ -d "$HOME/.pyenv" ]; then
-        rm -rf "$HOME/.pyenv"
+    if [ -d "$HOME/.nvm" ]; then
+        rm -rf "$HOME/.nvm"
     fi
 
-    if [ -d "$DOTFILES/.pyenv" ]; then
-        rm -rf "$DOTFILES/.pyenv"
+    if [ -d "$HOME/.pyenv" ]; then
+        rm -rf "$HOME/.pyenv"
     fi
 fi
 
