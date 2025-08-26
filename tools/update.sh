@@ -2,10 +2,13 @@
 
 DOTFILES="$HOME/.dotfiles"
 
-mkdir -p "$HOME/.config/nvim"
-mkdir -p "$HOME/.gnupg"
-mkdir -p "$HOME/.local/bin"
-mkdir -p "$HOME/.vim"
+for dir in .config/nvim .gnupg .local/bin .vim; do
+    if [ -h "$HOME/$dir" ]; then
+        unlink "$HOME/$dir"
+    else
+        mkdir -p "$HOME/$dir"
+    fi
+done
 
 if [ -d "$DOTFILES" ]; then
     cd "$DOTFILES"
