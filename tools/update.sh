@@ -5,9 +5,8 @@ DOTFILES="$HOME/.dotfiles"
 for dir in .config/nvim .gnupg .local/bin .vim; do
     if [ -h "$HOME/$dir" ]; then
         unlink "$HOME/$dir"
-    else
-        mkdir -p "$HOME/$dir"
     fi
+    mkdir -p "$HOME/$dir"
 done
 
 if [ -d "$DOTFILES" ]; then
