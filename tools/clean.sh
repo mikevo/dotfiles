@@ -12,6 +12,10 @@ if [ -d "$HOME/.bash_it" ]; then
     rm -rf "$HOME/.bash_it"
 fi
 
+if [ -d "$HOME/.linuxbrew" ]; then
+    rm -rf "$HOME/.linuxbrew"
+fi
+
 if [ -d "$HOME/.zprezto" ]; then
     rm -rf "$HOME/.zprezto"
 fi

@@ -7,4 +7,5 @@ if [ -d "$DOTFILES" ]; then
     git pull
 
     stow --restow core
+    stow --restow bash
 fi
