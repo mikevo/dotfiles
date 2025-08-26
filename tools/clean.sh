@@ -33,5 +33,5 @@ if [ -n "$SSH_CONNECTION" ]; then
         rm -rf "$HOME/.pyenv"
     fi
 
-    rm -f "$HOME/.zcompdump*"
+    rm -f $HOME/.zcompdump*
 fi
