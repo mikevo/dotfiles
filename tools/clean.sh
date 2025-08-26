@@ -26,4 +26,11 @@ if [ -n "$SSH_CONNECTION" ]; then
             rm -rf "$HOME/$dir"
         fi
     done
+
+    find "$HOME/.config" -type d -empty -delete
+
+    if [ -d "$HOME/.pyenv" ]; then
+        rm -rf "$HOME/.pyenv"
+    fi
+
 fi
