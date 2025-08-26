@@ -19,3 +19,11 @@ fi
 if [ -d "$HOME/.zprezto" ]; then
     rm -rf "$HOME/.zprezto"
 fi
+
+if [ -n "$SSH_CONNECTION" ]; then
+    for dir in "Desktop" "Documents" "Downloads" "Music" "Pictures" "Projects" "Public" "Templates" "Videos"; do
+        if [ -d "$HOME/$dir" ] && [ -z "$(ls -A "$HOME/$dir")" ]; then
+            rm -rf "$HOME/$dir"
+        fi
+    done
+fi
