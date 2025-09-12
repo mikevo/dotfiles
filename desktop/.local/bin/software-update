@@ -1,8 +1,8 @@
 #!/bin/sh
 
-ECHO=$(which echo)
+ECHO="$(which echo) -e"
 
-$ECHO "system software update"
+$ECHO "UPDATE [System software] -------------------------------------------------------------------------------------------------------------------"
 if [ -x "$(command -v dnf)" ]
 then
     sudo dnf upgrade
@@ -11,23 +11,36 @@ then
     sudo apt update
     sudo apt --yes upgrade
 else
-    $ECHO "No apt or dnf package manager."
+    $ECHO "No apt or dnf package manager"
 fi
+$ECHO "\n"
 
-$ECHO -e "\n------------------------------------------------------------------------------------------------------------------------"
-$ECHO "flatpak update"
-sudo flatpak update
+$ECHO "UPDATE [Flatpack software] -----------------------------------------------------------------------------------------------------------------"
+if [ -x "$(command -v flatpak)" ]
+then
+    sudo flatpak update
+else
+    $ECHO "No flatpak software"
+fi
+$ECHO "\n"
 
-$ECHO -e "\n------------------------------------------------------------------------------------------------------------------------"
-$ECHO "snap refresh"
-sudo snap refresh
+$ECHO "UPDATE [SNAP software] ---------------------------------------------------------------------------------------------------------------------"
+if [ -x "$(command -v snap)" ]
+then
+    sudo snap refresh
+else
+    $ECHO "No snap software"
+fi
+$ECHO "\n"
 
-$ECHO -e "\n------------------------------------------------------------------------------------------------------------------------"
-$ECHO "pyenv update"
-pyenv update
+$ECHO "UPDATE [pyenv] -----------------------------------------------------------------------------------------------------------------------------"
+if [ -x $"(command -v pyenv)"]
+then
+    pyenv update
+else
+    $ECHO "No pyenv software"
+fi
+$ECHO "\n"
 
-$ECHO -e "\n------------------------------------------------------------------------------------------------------------------------"
-$ECHO "dotfile update"
-cd ~/.dotfiles
-git pull
-
+$ECHO "UPDATE [dotfiles] --------------------------------------------------------------------------------------------------------------------------"
+$HOME/.dotfiles/tools/update.sh

@@ -38,4 +38,9 @@ if [ -n "$SSH_CONNECTION" ]; then
     fi
 fi
 
+if [ -d "$HOME/.dotfiles" ]; then
+    stow --delete desktop
+    stow --delete development
+fi
+
 rm -f $HOME/.zcompdump*
