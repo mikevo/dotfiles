@@ -1,42 +1,66 @@
 #!/bin/sh
 
-ECHO="$(which echo) -e"
+log() {
+    printf "       %s\n" "$1"
+}
 
-$ECHO "UPDATE [System software] -------------------------------------------------------------------------------------------------------------------"
+log_output() {
+    while IFS= read -r line; do
+        log "$line"
+    done
+}
+
+log_end() {
+    printf "%s\n" "$1"
+}
+
+
+log_update() {
+  text="UPDATE [$1] "
+  printf "%s" "$text"
+  cols=$(tput cols)
+  text_len=${#text}
+  [ "$text_len" -lt "$cols" ] && \
+    printf '%*s\n' $((cols - text_len)) '' | tr ' ' '-' || echo
+}
+
+
+log_update "System software"
 if [ -x "$(command -v dnf)" ]
 then
     sudo dnf upgrade
 elif [ -x "$(command -v apt)" ]
 then
-    sudo apt update
-    sudo apt --yes upgrade
+    sudo apt update 2>&1 | log_output
+    sudo apt --yes upgrade 2>&1 | log_output
 else
-    $ECHO "No apt or dnf package manager"
+    log "No apt or dnf package manager"
 fi
-$ECHO "\n"
+log_end
 
-$ECHO "UPDATE [Flatpack software] -----------------------------------------------------------------------------------------------------------------"
+log_update "Flatpack software"
 if [ -x "$(command -v flatpak)" ]
 then
-    sudo flatpak update
+    sudo flatpak update 2>&1 | log_output
 else
-    $ECHO "No flatpak software"
+    log "No flatpak software"
 fi
-$ECHO "\n"
+log_end
 
-$ECHO "UPDATE [SNAP software] ---------------------------------------------------------------------------------------------------------------------"
+log_update "SNAP software"
 if [ -x "$(command -v snap)" ]
 then
-    sudo snap refresh
+    sudo snap refresh 2>&1 | log_output
 else
-    $ECHO "No snap software"
+    log "No snap software"
 fi
-$ECHO "\n"
+log_end
 
-$ECHO "UPDATE [pyenv] -----------------------------------------------------------------------------------------------------------------------------"
-if [ -x $"(command -v pyenv)"]
+log_update "pyenv"
+if [ -x $"(command -v pyenv)" ]
 then
-    pyenv update
+    pyenv update 2>&1 | log_output
 else
-    $ECHO "No pyenv software"
+    log "No pyenv software"
 fi
+log_end
