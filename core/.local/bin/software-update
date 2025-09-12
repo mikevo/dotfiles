@@ -40,7 +40,3 @@ then
 else
     $ECHO "No pyenv software"
 fi
-$ECHO "\n"
-
-$ECHO "UPDATE [dotfiles] --------------------------------------------------------------------------------------------------------------------------"
-$HOME/.dotfiles/tools/update.sh
