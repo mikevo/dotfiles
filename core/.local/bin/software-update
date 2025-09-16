@@ -41,7 +41,7 @@ log_end
 log_update "Flatpack software"
 if [ -x "$(command -v flatpak)" ]
 then
-    sudo flatpak update 2>&1 | log_output
+    sudo flatpak update --assumeyes 2>&1 | log_output
 else
     log "No flatpak software"
 fi
