@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -h "$HOME/tmp" ]; then
     unlink "$HOME/tmp"
@@ -23,7 +23,7 @@ fi
 if [ -n "$SSH_CONNECTION" ]; then
     for dir in "Desktop" "Documents" "Downloads" "Music" "Pictures" "Projects" "Public" "Templates" "Videos"; do
         if [ -d "$HOME/$dir" ] && [ -z "$(ls -A "$HOME/$dir")" ]; then
-            rm -rf "$HOME/$dir"
+            rm -rf "${HOME:?}/$dir"
         fi
     done
 
@@ -43,4 +43,4 @@ if [ -d "$HOME/.dotfiles" ]; then
     stow --delete development
 fi
 
-rm -f $HOME/.zcompdump*
+rm -f "$HOME/.zcompdump*"

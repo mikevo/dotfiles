@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 DOTFILES="$HOME/.dotfiles"
 
-if [ -d "$DOTFILES" ]; then
-    cd "$DOTFILES"
-    git pull
-fi
+cd "$DOTFILES" || exit 1
+git pull
