@@ -1,28 +1,37 @@
 #!/bin/bash -e
 
 DOTFILES="$HOME/.dotfiles"
-BASHRC=".dotfiles/bash/.bashrc"
-BASHRC_D=".dotfiles/bash/.bashrc.d"
+
 if [ ! -d "$DOTFILES" ]; then
     git clone --depth=1 https://github.com/mikevo/dotfiles.git "$DOTFILES"
 fi
 
-BASHRC_DEST=$(readlink -f "$HOME/.bashrc")
-if [ "$BASHRC_DEST" != "$HOME/$BASHRC" ]; then
-    if [ -f "$HOME/.bashrc" ] || [ -h "$HOME/.bashrc" ]; then
-        mv "$HOME/.bashrc" "$HOME/.bashrc.old"
+link_file() {
+    local source="$1"
+    local target="$2"
+
+    if [[ -L "$target" ]] && [[ "$(readlink "$target")" == "$source" ]]; then
+        # echo "Exists: $target -> $source"
+        return 0
     fi
 
-    cd "$HOME"
-    ln -s "$BASHRC" .
-fi
+    mkdir -p "$(dirname "$target")"
 
-BASHRC_D_DEST=$(readlink -f "$HOME/.bashrc.d")
-if [ "$BASHRC_D_DEST" != "$HOME/$BASHRC_D" ]; then
-    if [[ -e "$HOME/.bashrc.d" ]]; then
-        mv "$HOME/.bashrc.d" "$HOME/.bashrc.d.old"
+    if [[ -L "$target" ]]; then
+        unlink "$target"
+        echo "Unlink: $target -> $source"
+    elif [[ -e "$target" ]]; then
+        mv "$target" "$target.bak"
+        echo "Backup: $target -> $source"
     fi
 
-    cd "$HOME"
-    ln -s "$BASHRC_D" .
-fi
+    ln -s "$source" "$target"
+    echo "Linked: $target -> $source"  
+}
+
+link_file "$DOTFILES/bash/bashrc" "$HOME/.bashrc"
+link_file "$DOTFILES/bash/bashrc.d" "$HOME/.bashrc.d"
+link_file "$DOTFILES/bash/bash_profile" "$HOME/.bash_profile"
+
+link_file "$DOTFILES/core/gitignore_global" "$HOME/.gitignore_global"
+link_file "$DOTFILES/core/tmux.conf" "$HOME/.tmux.conf"
