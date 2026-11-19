@@ -33,5 +33,6 @@ link_file "$DOTFILES/bash/bashrc" "$HOME/.bashrc"
 link_file "$DOTFILES/bash/bashrc.d" "$HOME/.bashrc.d"
 link_file "$DOTFILES/bash/bash_profile" "$HOME/.bash_profile"
 
+link_file "$DOTFILES/core/env" "$HOME/.env"
 link_file "$DOTFILES/core/gitignore_global" "$HOME/.gitignore_global"
 link_file "$DOTFILES/core/tmux.conf" "$HOME/.tmux.conf"
